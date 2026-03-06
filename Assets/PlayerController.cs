@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     [Header("Effects")]
     public Animator camAnimator;
+    private bool canPlayCamShake;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -47,8 +48,18 @@ public class PlayerController : MonoBehaviour
     {
         if (isGrounded == true)
         {
-         camAnimator.SetTrigger("shake");
+            if (canPlayCamShake)
+            { 
+                canPlayCamShake = false;
+                camAnimator.SetTrigger("shake");              
+            }
         }
+        else
+        
+        {
+            canPlayCamShake = true;
+        }
+
 
         if (isGrounded)
         {
