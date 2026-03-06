@@ -23,7 +23,8 @@ public class PlayerController : MonoBehaviour
     public float checkRadius;
     public LayerMask whatIsGround;
     private bool isGrounded;
-
+    [Header("Effects")]
+    public Animator camAnimator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -44,6 +45,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (isGrounded == true)
+        {
+         camAnimator.SetTrigger("shake");
+        }
+
         if (isGrounded)
         {
             extraJump = extraJumpValue;
