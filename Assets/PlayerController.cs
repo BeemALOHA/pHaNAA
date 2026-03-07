@@ -157,8 +157,19 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             playerAnimator.SetTrigger("victory");
-        }       
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            playerAnimator.SetTrigger("hurt");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            playerAnimator.SetTrigger("Dead");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            playerAnimator.SetTrigger("Spawn");
+        }
     }
-
 }
 
