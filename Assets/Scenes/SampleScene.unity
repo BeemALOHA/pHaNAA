@@ -915,14 +915,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   speed: 5
   jumpForce: 5
-  extraJumpValue: 0
+  extraJumpsValue: 0
   jumpTime: 0
   groundCheck: {fileID: 0}
   checkRadius: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 0
+  distance: 0
+  whatIsLadder:
+    serializedVersion: 2
+    m_Bits: 0
+  dustEffect: {fileID: 0}
   camAnimator: {fileID: 0}
+  playerAnimator: {fileID: 0}
 --- !u!61 &576940741
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1532,14 +1538,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   speed: 5
   jumpForce: 5
-  extraJumpValue: 1
+  extraJumpsValue: 0
   jumpTime: 1
   groundCheck: {fileID: 1684336484}
   checkRadius: 1
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  distance: 0
+  whatIsLadder:
+    serializedVersion: 2
+    m_Bits: 0
+  dustEffect: {fileID: 3594100896291134809, guid: 1d219f70806db0d40873163f5f2b0c61, type: 3}
   camAnimator: {fileID: 519420033}
+  playerAnimator: {fileID: 1298495517}
 --- !u!95 &976061352
 Animator:
   serializedVersion: 7
@@ -2018,6 +2030,51 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 976061347}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1726351960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1726351962}
+  - component: {fileID: 1726351961}
+  m_Layer: 0
+  m_Name: Destoryer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1726351961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726351960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ba0f30c8bd77b46abfcb821ce61e73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Destoryer
+  timeToDestroy: 2
+--- !u!4 &1726351962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726351960}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.63647, y: 0.86478, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1778235971
 GameObject:
@@ -2532,3 +2589,4 @@ SceneRoots:
   - {fileID: 586170901}
   - {fileID: 576940743}
   - {fileID: 197554882}
+  - {fileID: 1726351962}

@@ -54,6 +54,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         PlayerInput();
+
+        playerAnimator.SetFloat("speed", Mathf.Abs(rb.linearVelocity.x));
+        playerAnimator.SetBool("jump", !isGrounded);
+
         if (isGrounded == true)
         {
             if(spawnDust == true)
