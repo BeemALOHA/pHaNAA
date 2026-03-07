@@ -40,9 +40,17 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius,whatIsGround);
+        playerAnimator.SetBool("jump", !isGrounded);
         inputHorizontal = Input.GetAxis("Horizontal");
         rb.linearVelocity = new Vector2(inputHorizontal * speed, rb.linearVelocity.y);
-        if(facingRight == false && inputHorizontal > 0)
+        if (inputHorizontal != 0)
+        {
+            playerAnimator.SetBool("Running", true);
+        }else
+                {
+            playerAnimator.SetBool("Running", false);
+        }
+        if (facingRight == false && inputHorizontal > 0)
         {
             Flip();
         }
@@ -53,16 +61,14 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        PlayerInput();
-
-        playerAnimator.SetFloat("speed", Mathf.Abs(rb.linearVelocity.x));
-        playerAnimator.SetBool("jump", !isGrounded);
+        PlayerInput();     
 
         if (isGrounded == true)
         {
             if(spawnDust == true)
             {
                 camAnimator.SetTrigger("shake");
+                playerAnimator.SetTrigger("Ground");
                 Instantiate(dustEffect, groundCheck.position, Quaternion.identity);
                 spawnDust = false;
             }
@@ -151,7 +157,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             playerAnimator.SetTrigger("victory");
-        }
+        }       
     }
+
 }
 
