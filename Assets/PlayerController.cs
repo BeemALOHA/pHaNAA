@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask whatIsGround;
-    [Header("Ladder")]
+    [Header("Ladder")]  
     public float distance;
     public LayerMask whatIsLadder;
     private bool isClimbing;
