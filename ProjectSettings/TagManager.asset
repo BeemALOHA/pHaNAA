@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Coin
   - Enemy
+  - WeakPoint
   layers:
   - Default
   - TransparentFX
@@ -43,6 +44,15 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: mid
+    uniqueID: 3257010629
+    locked: 0
+  - name: Front
+    uniqueID: 2826128297
+    locked: 0
+  - name: BG
+    uniqueID: 3991175975
     locked: 0
   m_RenderingLayers:
   - Default
